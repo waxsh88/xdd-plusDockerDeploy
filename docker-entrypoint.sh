@@ -29,15 +29,6 @@ if [ -z $REPO_URL ]; then
 fi
 
 
-if ! type git  >/dev/null 2>&1; then
-  echo "正在安装git..."
-  apk add git
-  apk add gcc
-else 
-  echo "git已安装"
-fi
-
-
 if [ ! -d $CODE_DIR/.git ]; then
   echo "xdd-plus 核心代码目录为空, 开始clone代码..."
   git clone $REPO_URL  $CODE_DIR
