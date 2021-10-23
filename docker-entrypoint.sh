@@ -32,6 +32,7 @@ fi
 if ! type git  >/dev/null 2>&1; then
   echo "正在安装git..."
   apk add git
+  apk add gcc
 else 
   echo "git已安装"
 fi
@@ -52,4 +53,4 @@ cd $CODE_DIR && go build
 
 
 echo "启动..."
- ./xdd-plus
+ ./xdd
