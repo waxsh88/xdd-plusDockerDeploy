@@ -4,8 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: sillygirl
-    hostname: sillygirl
+    container_name: xdd-plus
+    hostname: xdd-plus
     restart: unless-stopped
     tty: true
     stdin_open: true
