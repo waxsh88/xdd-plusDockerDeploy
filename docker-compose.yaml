@@ -1,0 +1,21 @@
+version: "3"
+services:
+  sillygirl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sillygirl
+    hostname: sillygirl
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    ports:
+      - "80:8080"
+    volumes:
+      - ./code:/xdd-plus
+      - ./conf:/xdd-plus/conf
+    environment:
+      # 国内网络建议开启，国外网络开启可能变慢
+      - ENABLE_GOPROXY=false  #go 加速代理
+      - ENABLE_GITHUBPROXY=false #github 加速代理
+      - ENABLE_APKPROXY=false #alpin APK 加速代理
